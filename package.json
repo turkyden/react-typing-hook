@@ -1,0 +1,7 @@
+{
+  "name": "react-typing-hook",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
