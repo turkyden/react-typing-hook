@@ -1,7 +1,7 @@
 {
-  "name": "react-slide-pane-storybook",
+  "name": "react-typing-storybook",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.0",
   "scripts": {
     "start": "start-storybook"
   },
@@ -19,7 +19,7 @@
     "fork-ts-checker-webpack-plugin": "^5.0.14",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-slide-pane": "^0.0.1",
+    "react-typing-hook": "^0.0.0",
     "regenerator-runtime": "^0.13.7",
     "ts-loader": "^8.0.2",
     "typescript": "^3.9.6",

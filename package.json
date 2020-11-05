@@ -1,7 +1,16 @@
 {
   "name": "react-typing-hook",
   "private": true,
+  "scripts": {
+    "build": "lerna run build",
+    "shoot": "lerna run shoot",
+    "start": "lerna run --parallel start",
+    "test": "lerna run test",
+    "test:coverage": "lerna run test:coverage",
+    "changelog": "lerna-changelog"
+  },
   "devDependencies": {
-    "lerna": "^3.22.1"
+    "lerna": "^3.22.1",
+    "lerna-changelog": "^1.0.1"
   }
 }

@@ -1,6 +1,21 @@
 {
-  "packages": [
-    "packages/*"
-  ],
-  "version": "0.0.0"
+  "packages": ["packages/*"],
+  "command": {
+    "version": {
+      "allowBranch": "master",
+      "includeMergedTags": true
+    },
+    "publish": {
+      "registry": "https://registry.npmjs.org/"
+    }
+  },
+  "changelog": {
+    "repo": "Turkyden/react-typing-hook",
+    "labels": {
+      "feature": "New Feature",
+      "bug": "Bug Fix"
+    }
+  },
+  "version": "independent",
+  "lerna": "0.0.0"
 }

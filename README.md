@@ -1,27 +1,27 @@
 # react-typing-hook
 
-There are some hook designed by Turkyden.
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
-## `typing`
+Animated typing in ~400 bytes 🐡 of React Hook.
 
-Generate the id of component.
+## Install
 
-```tsx
-import useId from '@Thooks/use-id'
-
-function App() {
-  const id = useId()
-  return <div id={id} />
-  // <div id='A:1'>
-}
+```yarn
+yarn add react-typing-hook
 ```
 
-## `useTyping`
+or
+
+```yarn
+npm install react-typing-hook
+```
+
+## Usage
 
 Type some animate text on the web.
 
 ```tsx
-import useId from '@Thooks/use-typing'
+import useTyping from 'react-typing-hook'
 
 function App() {
 
@@ -59,3 +59,6 @@ Such as a blink cursor style:
   50% { opacity: 0; }
 }
 ```
+
+## MIT
+

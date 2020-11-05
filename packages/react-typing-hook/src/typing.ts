@@ -22,10 +22,11 @@ export default async function type(node: HTMLDocument, ...args: Array<TypeArgs>)
 }
 
 async function edit(node: HTMLDocument, text: string): Promise<void> {
-  const overlap = getOverlap(node.textContent, text);
+  const textContent = node.textContent || '';
+  const overlap = getOverlap(textContent, text);
   await perform(node, [
-    ...deleter(node.textContent, overlap),
-    ...writer(text, overlap),
+    ...deleter(textContent, overlap) as Iterable<string>,
+    ...writer(text, overlap) as Iterable<string>,
   ]);
 }
 
@@ -34,7 +35,7 @@ async function wait(ms: number): Promise<void> {
 }
 
 async function perform(node: HTMLDocument, edits: Iterable<string>, speed = 60): Promise<void> {
-  for (const op of editor(edits)) {
+  for (const op of editor(edits) as Iterable<Editor>) {
     op(node);
     await wait(speed + speed * (Math.random() - 0.5));
   }

@@ -1,15 +1,22 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
+    "outDir": "./dist",
     "target": "es5",
     "module": "esnext",
     "moduleResolution": "node",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
+    "declaration": true,
     "jsx": "react",
     "strict": true,
-    "lib": ["es2017", "dom"],
-    "typeRoots": ["../react-slide-pane/@types", "../../node_modules/@types"]
+    "lib": ["ES2019", "DOM"],
+    "downlevelIteration": true,
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "typeRoots": ["./@types", "../../node_modules/@types"]
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "dist"]
+  "files": ["src/index.stories.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "dist", "@types"]
 }

@@ -9,11 +9,14 @@
     "declaration": true,
     "jsx": "react",
     "strict": true,
-    "lib": ["es2017", "dom"],
+    "lib": ["ES2019", "DOM"],
+    "downlevelIteration": true,
     "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "typeRoots": ["./@types", "../../node_modules/@types"]
   },
-  "files": ["src/index.tsx"],
+  "files": ["src/index.ts"],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist", "@types"]
 }
