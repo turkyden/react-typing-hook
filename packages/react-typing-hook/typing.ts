@@ -1,20 +1,9 @@
-import React, { useEffect, RefObject } from "react";
-
-type Editor = (node: HTMLDocument) => number
-type GeneratorEditor = Generator<Editor, void, Editor>
-type TypeArgs = unknown
-type func = () => any
-type TypingOptions = {
-  steps: Array<string | number | func>,
-  loop: number
-}
-
 /**
  * 
  * @param node 
  * @param args 
  */
-export async function type(node: HTMLDocument, ...args: Array<TypeArgs>): Promise<void> {
+export default async function type(node: HTMLDocument, ...args: Array<TypeArgs>): Promise<void> {
   for (const arg of args) {
     switch (typeof arg) {
       case "string":
@@ -72,25 +61,3 @@ export function* deleter([...text]: Iterable<string>, startIndex = 0, endIndex =
 export function getOverlap(start: string, [...end]: string): number {
   return [...start, NaN].findIndex((char, i) => end[i] !== char);
 }
-
-const loopedType = type;
-
-const useTyping = (ref: RefObject<HTMLDocument>, { steps, loop } : TypingOptions) => {
-
-  useEffect(() => {
-    if (loop === Infinity) {
-      type(ref.current, ...steps, loopedType);
-    } else if (typeof loop === "number") {
-      type(
-        ref.current,
-        ...Array(loop)
-          .fill(steps)
-          .flat()
-      );
-    } else {
-      type(ref.current, ...steps);
-    }
-  });
-}
-
-export default useTyping

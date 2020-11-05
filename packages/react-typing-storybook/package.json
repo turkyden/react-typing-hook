@@ -1,0 +1,28 @@
+{
+  "name": "react-slide-pane-storybook",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "start": "start-storybook"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-storysource": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preset-typescript": "^2.1.0",
+    "@storybook/react": "^5.3.19",
+    "@storybook/source-loader": "^5.3.19",
+    "@types/react": "^16.9.23",
+    "@types/webpack": "^4.41.21",
+    "babel-loader": "^8.1.0",
+    "fork-ts-checker-webpack-plugin": "^5.0.14",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-slide-pane": "^0.0.1",
+    "regenerator-runtime": "^0.13.7",
+    "ts-loader": "^8.0.2",
+    "typescript": "^3.9.6",
+    "webpack": "^4.44.1"
+  }
+}
