@@ -1,0 +1,52 @@
+{
+  "name": "react-slide-pane",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "author": "Dengju Deng <wj871287@gmail.com>",
+  "homepage": "https://react-slide-pane.com",
+  "license": "MIT",
+  "repository": "https://github.com/Turkyden/react-slide-pane/tree/master/packages/react-slide-pane",
+  "funding": "https://github.com/Turkyden/react-slide-pane?sponsor=1",
+  "keywords": [
+    "react",
+    "image",
+    "hover",
+    "effect",
+    "animate"
+  ],
+  "scripts": {
+    "start": "rollup -c -w",
+    "build": "rollup -c",
+    "prepublishOnly": "NODE_ENV=production yarn build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "classnames": "^2.2.6",
+    "color": "^3.1.2",
+    "emotion": "^10.0.27",
+    "lodash.range": "^3.2.0",
+    "react-spring": "^8.0.27"
+  },
+  "peerDependencies": {
+    "react": "^16.8",
+    "react-dom": "^16.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@types/classnames": "^2.2.10",
+    "@types/color": "^3.0.1",
+    "@types/jest": "^24.0.15",
+    "@types/lodash.range": "^3.2.6",
+    "@types/react": "^16.9.23",
+    "jest": "^26.2.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rollup": "^2.21.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "ts-jest": "^26.1.4",
+    "typescript": "^3.9.6"
+  }
+}
