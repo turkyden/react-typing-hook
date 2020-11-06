@@ -3,7 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "start-storybook"
+    "start": "start-storybook",
+    "build": "build-storybook -s public -o ../../build ",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
     "@babel/core": "^7.11.0",

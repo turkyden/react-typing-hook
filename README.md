@@ -25,7 +25,7 @@ import useTyping from 'react-typing-hook'
 
 function App() {
 
-  const ref = React.useRef();
+  const ref = React.useRef(null);
   
   useTyping(ref, {
     steps: ['Hello', 1000, 'Hello world!', 500]
@@ -41,13 +41,13 @@ function App() {
 }
 ```
 
-Added the classname to the dom:
+Added the classname on the dom:
 
 ```html
 <p ref={ref} className="typingWrapper"></p>
 ```
 
-Such as a blink cursor style:
+Such as a blink cursor style like this:
 
 ```css
 .typingWrapper::after {
@@ -60,4 +60,24 @@ Such as a blink cursor style:
 }
 ```
 
-## MIT
+## Contributing
+
+```yarn
+yarn install
+```
+
+Compiles and hot-reloads for development
+
+```yarn
+yarn start
+```
+
+Compiles and minifies for production
+
+```yarn
+yarn build
+```
+
+## LICENSE
+
+MIT

@@ -13,7 +13,6 @@
   },
   "changelog": {
     "repo": "Turkyden/react-typing-hook",
-    "GITHUB_AUTH": "REACT_TYPING_HOOK",
     "labels": {
       "feature": "New Feature",
       "bug": "Bug Fix"

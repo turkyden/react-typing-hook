@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "cz": "git-cz",
+    "bootstrap": "lerna boostrap",
     "build": "lerna run build",
     "shoot": "lerna run shoot",
     "start": "lerna run --parallel start",
@@ -15,6 +16,7 @@
       "path": "./node_modules/cz-lerna-changelog"
     }
   },
+  "GITHUB_AUTH": "REACT_TYPING_HOOK",
   "devDependencies": {
     "commitizen": "^4.2.2",
     "cz-lerna-changelog": "^2.0.3",
