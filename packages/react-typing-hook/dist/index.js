@@ -93,11 +93,35 @@ function __spread() {
 }
 
 /**
- *
+ * React Hook Wrapper
+ * @param ref
+ * @param param1
+ */
+function useTyping(ref, _a) {
+    var steps = _a.steps, loop = _a.loop;
+    var loopedType = typing;
+    react.useLayoutEffect(function () {
+        if (ref.current === null)
+            return undefined;
+        if (loop === Infinity) {
+            typing.apply(void 0, __spread([ref.current], steps, [loopedType]));
+        }
+        else if (typeof loop === "number") {
+            typing.apply(void 0, __spread([ref.current], Array(loop)
+                .fill(steps)
+                .flat()));
+        }
+        else {
+            typing.apply(void 0, __spread([ref.current], steps));
+        }
+    });
+}
+/**
+ * Typing core logic
  * @param node
  * @param args
  */
-function type(node) {
+function typing(node) {
     var args = [];
     for (var _i = 1; _i < arguments.length; _i++) {
         args[_i - 1] = arguments[_i];
@@ -305,26 +329,10 @@ function getOverlap(start, _a) {
     return __spread(start, [NaN]).findIndex(function (char, i) { return end[i] !== char; });
 }
 
-var loopedType = type;
-var useTyping = function (ref, _a) {
-    var steps = _a.steps, loop = _a.loop;
-    react.useEffect(function () {
-        //if(ref.current === null) return undefined;
-        if (ref.current !== null) {
-            if (loop === Infinity) {
-                type.apply(void 0, __spread([ref.current], steps, [loopedType]));
-            }
-            else if (typeof loop === "number") {
-                type.apply(void 0, __spread([ref.current], Array(loop)
-                    .fill(steps)
-                    .flat()));
-            }
-            else {
-                type.apply(void 0, __spread([ref.current], steps));
-            }
-        }
-    });
-};
-
 exports.default = useTyping;
+exports.deleter = deleter;
+exports.editor = editor;
+exports.getOverlap = getOverlap;
+exports.typing = typing;
+exports.writer = writer;
 //# sourceMappingURL=index.js.map

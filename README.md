@@ -44,7 +44,7 @@ function App() {
 Added the classname to the dom:
 
 ```html
-<p ref={ref} className={typingWrapper}></p>
+<p ref={ref} className="typingWrapper"></p>
 ```
 
 Such as a blink cursor style:
@@ -61,4 +61,3 @@ Such as a blink cursor style:
 ```
 
 ## MIT
-

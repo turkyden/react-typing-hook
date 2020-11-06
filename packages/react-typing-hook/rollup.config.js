@@ -1,4 +1,5 @@
 import typescript from 'rollup-plugin-typescript2'
+import css from 'rollup-plugin-css-only'
 import pkg from './package.json'
 
 export default {
@@ -16,7 +17,10 @@ export default {
       exports: 'named'
     }
   ],
-  plugins: [typescript()],
+  plugins: [
+    typescript(), 
+    css({ output: 'dist/index.css' })
+  ],
   external: [
     ...Object.keys(pkg.dependencies),
     ...Object.keys(pkg.peerDependencies)

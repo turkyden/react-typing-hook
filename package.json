@@ -2,6 +2,7 @@
   "name": "react-typing-hook",
   "private": true,
   "scripts": {
+    "cz": "git-cz",
     "build": "lerna run build",
     "shoot": "lerna run shoot",
     "start": "lerna run --parallel start",
@@ -9,7 +10,14 @@
     "test:coverage": "lerna run test:coverage",
     "changelog": "lerna-changelog"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
   "devDependencies": {
+    "commitizen": "^4.2.2",
+    "cz-lerna-changelog": "^2.0.3",
     "lerna": "^3.22.1",
     "lerna-changelog": "^1.0.1"
   }
