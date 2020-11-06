@@ -1,4 +1,4 @@
-name: GitHub Actions Build and Deploy Demo
+name: REACT_TYPING_HOOK_BUILD
 on:
   push:
     branches:

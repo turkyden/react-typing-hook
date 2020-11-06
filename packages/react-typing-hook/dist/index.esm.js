@@ -94,21 +94,22 @@ function __spread() {
  * @param param1
  */
 function useTyping(ref, _a) {
-    var steps = _a.steps, loop = _a.loop;
+    var steps = _a.steps, loop = _a.loop, _b = _a.speed, speed = _b === void 0 ? 60 : _b;
     var loopedType = typing;
     useLayoutEffect(function () {
         if (ref.current === null)
             return undefined;
         if (loop === Infinity) {
-            typing.apply(void 0, __spread([ref.current], steps, [loopedType]));
+            typing.apply(void 0, __spread([ref.current, speed], steps, [loopedType]));
         }
         else if (typeof loop === "number") {
-            typing.apply(void 0, __spread([ref.current], Array(loop)
+            typing.apply(void 0, __spread([ref.current,
+                speed], Array(loop)
                 .fill(steps)
                 .flat()));
         }
         else {
-            typing.apply(void 0, __spread([ref.current], steps));
+            typing.apply(void 0, __spread([ref.current, speed], steps));
         }
     });
 }
@@ -117,10 +118,10 @@ function useTyping(ref, _a) {
  * @param node
  * @param args
  */
-function typing(node) {
+function typing(node, speed) {
     var args = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        args[_i - 1] = arguments[_i];
+    for (var _i = 2; _i < arguments.length; _i++) {
+        args[_i - 2] = arguments[_i];
     }
     return __awaiter(this, void 0, void 0, function () {
         var args_1, args_1_1, arg, _a, e_1_1;
@@ -141,7 +142,7 @@ function typing(node) {
                         case "function": return [3 /*break*/, 6];
                     }
                     return [3 /*break*/, 8];
-                case 2: return [4 /*yield*/, edit(node, arg)];
+                case 2: return [4 /*yield*/, edit(node, speed, arg)];
                 case 3:
                     _c.sent();
                     return [3 /*break*/, 10];
@@ -149,7 +150,7 @@ function typing(node) {
                 case 5:
                     _c.sent();
                     return [3 /*break*/, 10];
-                case 6: return [4 /*yield*/, arg.apply(void 0, __spread([node], args))];
+                case 6: return [4 /*yield*/, arg.apply(void 0, __spread([node, speed], args))];
                 case 7:
                     _c.sent();
                     return [3 /*break*/, 10];
@@ -176,7 +177,7 @@ function typing(node) {
         });
     });
 }
-function edit(node, text) {
+function edit(node, speed, text) {
     return __awaiter(this, void 0, void 0, function () {
         var textContent, overlap;
         return __generator(this, function (_a) {
@@ -184,7 +185,7 @@ function edit(node, text) {
                 case 0:
                     textContent = node.textContent || '';
                     overlap = getOverlap(textContent, text);
-                    return [4 /*yield*/, perform(node, __spread(deleter(textContent, overlap), writer(text, overlap)))];
+                    return [4 /*yield*/, perform(node, speed, __spread(deleter(textContent, overlap), writer(text, overlap)))];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];
@@ -204,8 +205,7 @@ function wait(ms) {
         });
     });
 }
-function perform(node, edits, speed) {
-    if (speed === void 0) { speed = 60; }
+function perform(node, speed, edits) {
     return __awaiter(this, void 0, void 0, function () {
         var _a, _b, op, e_2_1;
         var e_2, _c;

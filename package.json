@@ -16,7 +16,6 @@
       "path": "./node_modules/cz-lerna-changelog"
     }
   },
-  "GITHUB_AUTH": "REACT_TYPING_HOOK",
   "devDependencies": {
     "commitizen": "^4.2.2",
     "cz-lerna-changelog": "^2.0.3",
