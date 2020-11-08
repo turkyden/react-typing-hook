@@ -1,6 +1,5 @@
 {
   "name": "react-typing-hook",
-  "private": true,
   "scripts": {
     "cz": "git-cz",
     "bootstrap": "lerna bootstrap",
@@ -9,7 +8,8 @@
     "start": "lerna run --parallel start",
     "test": "lerna run test",
     "test:coverage": "lerna run test:coverage",
-    "changelog": "lerna-changelog"
+    "changelog": "lerna-changelog",
+    "publish": "lerna publish"
   },
   "config": {
     "commitizen": {
@@ -21,5 +21,10 @@
     "cz-lerna-changelog": "^2.0.3",
     "lerna": "^3.22.1",
     "lerna-changelog": "^1.0.1"
+  },
+  "version": "0.0.0",
+  "publishConfig": {
+    "directory": "dist",
+    "registry": "https://registry.npmjs.org/"
   }
 }
