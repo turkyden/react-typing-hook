@@ -18,6 +18,9 @@
     "key in",
     "entering"
   ],
+  "publishConfig": { 
+    "registry": "https://npm.pkg.github.com/" 
+  },
   "scripts": {
     "start": "rollup -c -w",
     "build": "rollup -c",
