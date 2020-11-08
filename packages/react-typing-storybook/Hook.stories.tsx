@@ -1,17 +1,14 @@
 import React, { useRef, useState } from 'react'
 import { storiesOf } from '@storybook/react'
-import {
-  withKnobs,
-  number,
-  boolean,
-  select,
-  color
-} from '@storybook/addon-knobs'
 import useTyping from 'react-typing-hook'
 import 'react-typing-hook/dist/index.css'
 
-storiesOf('react-typing-hook', module)
-  .addDecorator(withKnobs)
+storiesOf('Example/Hook', module)
+  .addParameters({
+    docs: {
+      inlineStories: false
+    }
+  })
   .add('hello world', () => {
     const ref = useRef(null);
     useTyping(ref, {

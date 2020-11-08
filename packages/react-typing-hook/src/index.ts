@@ -6,8 +6,10 @@ import './index.css'
  * @param ref 
  * @param param1 
  */
-export default function useTyping(ref: RefObject<HTMLDocument>, { steps, loop, speed = 60 } : TypingOptions) {
+export default function useTyping(ref: RefObject<HTMLDocument | null>, { steps, loop, speed = 60 } : TypingOptions) {
+
   const loopedType = typing;
+
   useLayoutEffect(() => {
     if(ref.current === null) return undefined;
     
