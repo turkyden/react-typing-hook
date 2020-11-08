@@ -19,7 +19,6 @@
     "entering"
   ],
   "publishConfig": {
-    "directory": "dist",
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
@@ -47,5 +46,5 @@
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.6"
   },
-  "gitHead": "f538c1010e3cf04acd1d9b2d355b189ee8aa0160"
+  "gitHead": "15770b37feb64de96aefe57f30227b1e826f9389"
 }

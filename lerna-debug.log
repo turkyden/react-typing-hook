@@ -1,14 +1,101 @@
-16 error Error: Command failed: git remote update
-16 error error: cannot lock ref 'refs/remotes/origin/gh-pages': ref refs/remotes/origin/gh-pages is at b3cba0b9121b94dd2d719788c4252af9ba51e4bc but expected b7182a30970fdbf09be6c66e178e1eaa32d0bbe4
-16 error From github.com:Turkyden/react-typing-hook
-16 error  ! b7182a3...b3cba0b gh-pages   -> origin/gh-pages  (unable to update local ref)
-16 error error: Could not fetch origin
-16 error
-16 error Fetching origin
-16 error
-16 error     at makeError (C:\github\react-typing-hook\node_modules\execa\index.js:174:9)
-16 error     at Function.module.exports.sync (C:\github\react-typing-hook\node_modules\execa\index.js:338:15)
-16 error     at Object.execSync (C:\github\react-typing-hook\node_modules\@lerna\child-process\index.js:26:16)
-16 error     at updateRemote (C:\github\react-typing-hook\node_modules\@lerna\version\lib\is-behind-upstream.js:26:16)
-16 error     at isBehindUpstream (C:\github\react-typing-hook\node_modules\@lerna\version\lib\is-behind-upstream.js:11:3)
-16 error     at VersionCommand.initialize (C:\github\react-typing-hook\node_modules\@lerna\version\index.js:154:9)
+0 silly argv {
+0 silly argv   _: [ 'publish' ],
+0 silly argv   composed: 'publish',
+0 silly argv   lernaVersion: '3.22.1',
+0 silly argv   '$0': 'node_modules\\lerna\\cli.js'
+0 silly argv }
+1 notice cli v3.22.1
+2 verbose rootPath C:\github\react-typing-hook
+3 info versioning independent
+4 verbose session d104a0ca6396e7a9
+5 verbose user-agent lerna/3.22.1/node@v14.15.0+x64 (win32)
+6 info publish rooted leaf detected, skipping synthetic root lifecycles
+7 silly argv { _: [ 'publish' ], composed: 'publish', lernaVersion: '3.22.1' }
+8 verbose rootPath C:\github\react-typing-hook
+9 silly isAnythingCommitted
+10 verbose isAnythingCommitted 1
+11 silly currentBranch
+12 verbose currentBranch master
+13 silly remoteBranchExists
+14 silly isBehindUpstream
+15 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 0
+16 silly hasTags
+17 verbose hasTags true
+18 silly git-describe.sync "react-typing-hook@0.1.2-1-ga80c1e2" => {"lastTagName":"react-typing-hook@0.1.2","lastVersion":"0.1.2","refCount":"1","sha":"a80c1e2","isDirty":false}
+19 info Looking for changed packages since react-typing-hook@0.1.2
+20 silly checking diff packages/react-typing-hook
+21 silly found diff in packages/react-typing-hook/package.json
+22 verbose filtered diff [ 'packages/react-typing-hook/package.json' ]
+23 silly checking diff packages/react-typing-storybook
+24 silly no diff found in react-typing-storybook
+25 verbose updated react-typing-hook
+26 verbose updated react-typing-storybook
+27 verbose git-describe undefined => "react-typing-hook@0.1.2-1-ga80c1e2"
+28 silly git-describe parsed => {"lastTagName":"react-typing-hook@0.1.2","lastVersion":"0.1.2","refCount":"1","sha":"a80c1e2","isDirty":false}
+29 info execute Skipping releases
+30 silly lifecycle No script for "preversion" in "react-typing-hook", continuing
+31 silly lifecycle No script for "version" in "react-typing-hook", continuing
+32 silly lifecycle No script for "preversion" in "react-typing-storybook", continuing
+33 silly lifecycle No script for "version" in "react-typing-storybook", continuing
+34 silly gitAdd [
+34 silly gitAdd   'packages/react-typing-hook/package.json',
+34 silly gitAdd   'packages/react-typing-hook/package-lock.json',
+34 silly gitAdd   'packages/react-typing-storybook/package.json',
+34 silly gitAdd   'packages/react-typing-storybook/package-lock.json'
+34 silly gitAdd ]
+35 silly gitCommit Publish
+35 silly gitCommit
+35 silly gitCommit  - react-typing-hook@0.1.3
+35 silly gitCommit  - react-typing-storybook@0.1.3
+36 verbose git [
+36 verbose git   'commit',
+36 verbose git   '-F',
+36 verbose git   'C:\\Users\\61628\\AppData\\Local\\Temp\\42872058-a14f-4641-a138-69727fc8babe\\lerna-commit.txt'
+36 verbose git ]
+37 silly gitTag react-typing-hook@0.1.3
+38 verbose git [ 'tag', 'react-typing-hook@0.1.3', '-m', 'react-typing-hook@0.1.3' ]
+39 silly gitTag react-typing-storybook@0.1.3
+40 verbose git [
+40 verbose git   'tag',
+40 verbose git   'react-typing-storybook@0.1.3',
+40 verbose git   '-m',
+40 verbose git   'react-typing-storybook@0.1.3'
+40 verbose git ]
+41 silly lifecycle No script for "postversion" in "react-typing-hook", continuing
+42 silly lifecycle No script for "postversion" in "react-typing-storybook", continuing
+43 info git Pushing tags...
+44 silly gitPush origin master
+45 info publish Publishing packages to npm...
+46 info Verifying npm credentials
+47 verbose Retrieving npm user profile
+48 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 2488ms
+49 silly npm profile get received {"tfa":false,"name":"wj871287","email":"wj871287@gmail.com","email_verified":true,"created":"2018-05-09T08:37:22.090Z","updated":"2020-10-08T03:37:44.722Z","cidr_whitelist":null,"fullname":"dengju.deng","twitter":"","github":"Turkyden"}
+50 silly get npm username received {"username":"wj871287","tfa":false,"name":"wj871287","email":"wj871287@gmail.com","email_verified":true,"created":"2018-05-09T08:37:22.090Z","updated":"2020-10-08T03:37:44.722Z","cidr_whitelist":null,"fullname":"dengju.deng","twitter":"","github":"Turkyden"}
+51 silly verifyNpmPackageAccess
+52 http fetch GET 200 https://registry.npmjs.org/-/org/wj871287/package?format=cli 595ms
+53 info Checking two-factor auth mode
+54 verbose Retrieving npm user profile
+55 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 463ms
+56 silly npm profile get received {"tfa":false,"name":"wj871287","email":"wj871287@gmail.com","email_verified":true,"created":"2018-05-09T08:37:22.090Z","updated":"2020-10-08T03:37:44.722Z","cidr_whitelist":null,"fullname":"dengju.deng","twitter":"","github":"Turkyden"}
+57 silly 2FA false
+58 warn ENOLICENSE Package react-typing-hook is missing a license.
+58 warn ENOLICENSE One way to fix this is to add a LICENSE.md file to the root of this repository.
+58 warn ENOLICENSE See https://choosealicense.com for additional guidance.
+59 silly getCurrentSHA
+60 verbose getCurrentSHA 15770b37feb64de96aefe57f30227b1e826f9389
+61 verbose pack-directory packages\react-typing-hook\dist
+62 silly lifecycle No script for "prepublish" in "react-typing-hook", continuing
+63 silly lifecycle No script for "prepare" in "react-typing-hook", continuing
+64 silly lifecycle "prepublishOnly" starting in "react-typing-hook"
+65 info lifecycle react-typing-hook@0.1.3~prepublishOnly: react-typing-hook@0.1.3
+66 verbose lifecycle react-typing-hook@0.1.3~prepublishOnly: unsafe-perm in lifecycle true
+67 verbose lifecycle react-typing-hook@0.1.3~prepublishOnly: PATH: C:\github\react-typing-hook\node_modules\npm-lifecycle\node-gyp-bin;C:\github\react-typing-hook\packages\react-typing-hook\node_modules\.bin;C:\Users\61628\AppData\Local\Temp\yarn--1604846654434-0.5468082588521099;C:\github\react-typing-hook\node_modules\.bin;C:\Users\61628\AppData\Local\Yarn\Data\link\node_modules\.bin;C:\Users\61628\.nodejs\node_global\bin;C:\Program Files\libexec\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Windows\System32;C:\Program Files (x86)\Git\bin;C:\Program Files (x86)\Git\cmd;C:\Users\61628\.nodejs\node_global\node_modules;C:\Program Files (x86)\VisualSVN Server\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Java\jdk-9.0.1\bin;C:\Program Files\maven\apache-maven-3.5.2\bin;C:\Program Files\dotnet\;C:\Program Files\MySQL\MySQL Server 5.7\bin;C:\WINDOWS\System32\OpenSSH\;c:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\flutter\bin;C:\Program Files\nodejs\;C:\Users\61628\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Git\bin;C:\Users\61628\.nodejs\node_global;C:\Users\61628\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\61628\AppData\Roaming\npm
+68 verbose lifecycle react-typing-hook@0.1.3~prepublishOnly: CWD: C:\github\react-typing-hook\packages\react-typing-hook
+69 silly lifecycle react-typing-hook@0.1.3~prepublishOnly: Args: [ '/d /s /c', 'yarn build' ]
+70 silly lifecycle react-typing-hook@0.1.3~prepublishOnly: Returned: code: 0  signal: null
+71 silly lifecycle "prepublishOnly" finished in "react-typing-hook"
+72 silly lifecycle No script for "prepack" in "react-typing-hook", continuing
+73 silly lifecycle No script for "postpack" in "react-typing-hook", continuing
+74 verbose packed packages\react-typing-hook\dist
+75 verbose publish react-typing-hook
+76 error
