@@ -1,6 +1,4 @@
-declare type func = () => any
-
-declare type TypingSteps = Array<string | number | func | Typing>
+declare type TypingSteps = Array<string | number | (() => any) | Typing>
 
 declare type Typing = (node: HTMLDocument, speed: number, ...args: TypingSteps) => Promise<void>
 

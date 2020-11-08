@@ -1,22 +1,10 @@
 module.exports = {
-  stories: ['../**/*.stories.tsx'],
-  addons: [
-    '@storybook/preset-typescript',
-    '@storybook/addon-knobs/register',
-    '@storybook/addon-storysource/register'
+  "stories": [
+    "../stories/**/*.stories.mdx",
+    "../stories/**/*.stories.@(js|jsx|ts|tsx)"
   ],
-  webpackFinal: config => {
-    config.module.rules.push({
-      test: /\.stories\.tsx?$/,
-      loaders: [
-        {
-          loader: require.resolve('@storybook/source-loader'),
-          options: { parser: 'typescript' }
-        }
-      ],
-      enforce: 'pre'
-    })
-
-    return config
-  }
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials"
+  ]
 }
