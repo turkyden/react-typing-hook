@@ -25,7 +25,7 @@
   "scripts": {
     "start": "rollup -c -w",
     "build": "rollup -c",
-    "prepublishOnly": "NODE_ENV=production yarn build",
+    "prepublishOnly": "yarn build",
     "test": "jest"
   },
   "dependencies": {
@@ -46,5 +46,6 @@
     "rollup-plugin-typescript2": "^0.27.1",
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.6"
-  }
+  },
+  "gitHead": "f538c1010e3cf04acd1d9b2d355b189ee8aa0160"
 }
