@@ -50,8 +50,8 @@ function App() {
 | Name | Type | Default | Description |
 | ---- | ----- | :----: | --- |
 | ref | `React.RefObject<HTMLDocument>` | - | The ref of typical text wraper |
-| steps | `Array<String|Number|Function>` | - | Step array assign to the typing |
-| loop | `number | Infinity` | 1 | The number of loop typing animation effect |
+| steps | `Array<string, number, Function>` | - | Step array assign to the typing |
+| loop | `number` | 1 | The number of loop typing animation effect, **Infinity** |
 | speed | `number` | 60 | The speed of typing animation effect |
 
 Add the classname on the dom.
