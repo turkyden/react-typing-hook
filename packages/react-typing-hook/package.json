@@ -19,7 +19,8 @@
     "entering"
   ],
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "directory": "dist",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "start": "rollup -c -w",

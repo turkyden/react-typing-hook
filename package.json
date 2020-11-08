@@ -22,9 +22,5 @@
     "lerna": "^3.22.1",
     "lerna-changelog": "^1.0.1"
   },
-  "version": "0.0.0",
-  "publishConfig": {
-    "directory": "dist",
-    "registry": "https://registry.npmjs.org/"
-  }
+  "version": "0.0.0"
 }

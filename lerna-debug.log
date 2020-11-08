@@ -1,0 +1,14 @@
+16 error Error: Command failed: git remote update
+16 error error: cannot lock ref 'refs/remotes/origin/gh-pages': ref refs/remotes/origin/gh-pages is at b3cba0b9121b94dd2d719788c4252af9ba51e4bc but expected b7182a30970fdbf09be6c66e178e1eaa32d0bbe4
+16 error From github.com:Turkyden/react-typing-hook
+16 error  ! b7182a3...b3cba0b gh-pages   -> origin/gh-pages  (unable to update local ref)
+16 error error: Could not fetch origin
+16 error
+16 error Fetching origin
+16 error
+16 error     at makeError (C:\github\react-typing-hook\node_modules\execa\index.js:174:9)
+16 error     at Function.module.exports.sync (C:\github\react-typing-hook\node_modules\execa\index.js:338:15)
+16 error     at Object.execSync (C:\github\react-typing-hook\node_modules\@lerna\child-process\index.js:26:16)
+16 error     at updateRemote (C:\github\react-typing-hook\node_modules\@lerna\version\lib\is-behind-upstream.js:26:16)
+16 error     at isBehindUpstream (C:\github\react-typing-hook\node_modules\@lerna\version\lib\is-behind-upstream.js:11:3)
+16 error     at VersionCommand.initialize (C:\github\react-typing-hook\node_modules\@lerna\version\index.js:154:9)
