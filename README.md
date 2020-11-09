@@ -1,6 +1,6 @@
 # react-typing-hook
 
-Animated typing in ~400 bytes 🐡 of React Hook.
+Animated typing in ~400 bytes 🐡 of React Hook. [Preview in CodeSandBox &rarr;](https://codesandbox.io/s/react-typing-hook-c154o)
 
 ![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
