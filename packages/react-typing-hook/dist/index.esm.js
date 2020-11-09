@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -96,7 +96,7 @@ function __spread() {
 function useTyping(ref, _a) {
     var steps = _a.steps, loop = _a.loop, _b = _a.speed, speed = _b === void 0 ? 60 : _b;
     var loopedType = typing;
-    useLayoutEffect(function () {
+    useEffect(function () {
         if (ref.current === null)
             return undefined;
         if (loop === Infinity) {

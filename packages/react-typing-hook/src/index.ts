@@ -1,4 +1,4 @@
-import { useLayoutEffect, RefObject } from "react";
+import { useEffect, RefObject } from "react";
 import './index.css'
 
 /**
@@ -10,7 +10,7 @@ export default function useTyping(ref: RefObject<HTMLDocument | null>, { steps, 
 
   const loopedType = typing;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if(ref.current === null) return undefined;
     
     if (loop === Infinity) {
