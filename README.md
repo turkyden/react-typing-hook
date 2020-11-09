@@ -1,11 +1,15 @@
 # react-typing-hook
 
-Animated typing in ~400 bytes 🐡 of React Hook. [Preview in CodeSandBox &rarr;](https://codesandbox.io/s/react-typing-hook-c154o)
+Animated typing in ~400 bytes 🐡 of React Hook.
 
 ![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 ![GitHub](https://img.shields.io/github/license/Turkyden/react--typing--hook)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/Turkyden/react--typing-hook/REACT_TYPING_HOOK_BUILD/master)
+
+[Preview in CodeSandBox &rarr;](https://codesandbox.io/s/react-typing-hook-c154o)
+
+[![Edit react-typing-hook](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-typing-hook-c154o?fontsize=14&hidenavigation=1&theme=dark)
 
 ## Install
 
