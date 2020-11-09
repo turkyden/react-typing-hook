@@ -99,6 +99,212 @@ function __spread() {
  */
 function useTyping(ref, _a) {
     var steps = _a.steps, loop = _a.loop, _b = _a.speed, speed = _b === void 0 ? 60 : _b;
+    function typing(node, speed) {
+        var args = [];
+        for (var _i = 2; _i < arguments.length; _i++) {
+            args[_i - 2] = arguments[_i];
+        }
+        return __awaiter(this, void 0, void 0, function () {
+            var args_1, args_1_1, arg, _a, e_1_1;
+            var e_1, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        _c.trys.push([0, 12, 13, 14]);
+                        args_1 = __values(args), args_1_1 = args_1.next();
+                        _c.label = 1;
+                    case 1:
+                        if (!!args_1_1.done) return [3 /*break*/, 11];
+                        arg = args_1_1.value;
+                        _a = typeof arg;
+                        switch (_a) {
+                            case "string": return [3 /*break*/, 2];
+                            case "number": return [3 /*break*/, 4];
+                            case "function": return [3 /*break*/, 6];
+                        }
+                        return [3 /*break*/, 8];
+                    case 2: return [4 /*yield*/, edit(node, speed, arg)];
+                    case 3:
+                        _c.sent();
+                        return [3 /*break*/, 10];
+                    case 4: return [4 /*yield*/, wait(arg)];
+                    case 5:
+                        _c.sent();
+                        return [3 /*break*/, 10];
+                    case 6: return [4 /*yield*/, arg.apply(void 0, __spread([node, speed], args))];
+                    case 7:
+                        _c.sent();
+                        return [3 /*break*/, 10];
+                    case 8: return [4 /*yield*/, arg];
+                    case 9:
+                        _c.sent();
+                        _c.label = 10;
+                    case 10:
+                        args_1_1 = args_1.next();
+                        return [3 /*break*/, 1];
+                    case 11: return [3 /*break*/, 14];
+                    case 12:
+                        e_1_1 = _c.sent();
+                        e_1 = { error: e_1_1 };
+                        return [3 /*break*/, 14];
+                    case 13:
+                        try {
+                            if (args_1_1 && !args_1_1.done && (_b = args_1.return)) _b.call(args_1);
+                        }
+                        finally { if (e_1) throw e_1.error; }
+                        return [7 /*endfinally*/];
+                    case 14: return [2 /*return*/];
+                }
+            });
+        });
+    }
+    function edit(node, speed, text) {
+        return __awaiter(this, void 0, void 0, function () {
+            var textContent, overlap;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        textContent = node.textContent || '';
+                        overlap = getOverlap(textContent, text);
+                        return [4 /*yield*/, perform(node, speed, __spread(deleter(textContent, overlap), writer(text, overlap)))];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    }
+    function wait(ms) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, new Promise(function (resolve) { return setTimeout(resolve, ms); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    }
+    function perform(node, speed, edits) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _a, _b, op, e_2_1;
+            var e_2, _c;
+            return __generator(this, function (_d) {
+                switch (_d.label) {
+                    case 0:
+                        _d.trys.push([0, 5, 6, 7]);
+                        _a = __values(editor(edits)), _b = _a.next();
+                        _d.label = 1;
+                    case 1:
+                        if (!!_b.done) return [3 /*break*/, 4];
+                        op = _b.value;
+                        op(node);
+                        return [4 /*yield*/, wait(speed + speed * (Math.random() - 0.5))];
+                    case 2:
+                        _d.sent();
+                        _d.label = 3;
+                    case 3:
+                        _b = _a.next();
+                        return [3 /*break*/, 1];
+                    case 4: return [3 /*break*/, 7];
+                    case 5:
+                        e_2_1 = _d.sent();
+                        e_2 = { error: e_2_1 };
+                        return [3 /*break*/, 7];
+                    case 6:
+                        try {
+                            if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
+                        }
+                        finally { if (e_2) throw e_2.error; }
+                        return [7 /*endfinally*/];
+                    case 7: return [2 /*return*/];
+                }
+            });
+        });
+    }
+    function editor(edits) {
+        var _loop_1, edits_1, edits_1_1, edit_1, e_3_1;
+        var e_3, _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _loop_1 = function (edit_1) {
+                        return __generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, function (node) { return requestAnimationFrame(function () { return (node.textContent = edit_1); }); }];
+                                case 1:
+                                    _a.sent();
+                                    return [2 /*return*/];
+                            }
+                        });
+                    };
+                    _b.label = 1;
+                case 1:
+                    _b.trys.push([1, 6, 7, 8]);
+                    edits_1 = __values(edits), edits_1_1 = edits_1.next();
+                    _b.label = 2;
+                case 2:
+                    if (!!edits_1_1.done) return [3 /*break*/, 5];
+                    edit_1 = edits_1_1.value;
+                    return [5 /*yield**/, _loop_1(edit_1)];
+                case 3:
+                    _b.sent();
+                    _b.label = 4;
+                case 4:
+                    edits_1_1 = edits_1.next();
+                    return [3 /*break*/, 2];
+                case 5: return [3 /*break*/, 8];
+                case 6:
+                    e_3_1 = _b.sent();
+                    e_3 = { error: e_3_1 };
+                    return [3 /*break*/, 8];
+                case 7:
+                    try {
+                        if (edits_1_1 && !edits_1_1.done && (_a = edits_1.return)) _a.call(edits_1);
+                    }
+                    finally { if (e_3) throw e_3.error; }
+                    return [7 /*endfinally*/];
+                case 8: return [2 /*return*/];
+            }
+        });
+    }
+    function writer(_a, startIndex, endIndex) {
+        var _b = __read(_a), text = _b.slice(0);
+        if (startIndex === void 0) { startIndex = 0; }
+        if (endIndex === void 0) { endIndex = text.length; }
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    if (!(startIndex < endIndex)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, text.slice(0, ++startIndex).join("")];
+                case 1:
+                    _c.sent();
+                    return [3 /*break*/, 0];
+                case 2: return [2 /*return*/];
+            }
+        });
+    }
+    function deleter(_a, startIndex, endIndex) {
+        var _b = __read(_a), text = _b.slice(0);
+        if (startIndex === void 0) { startIndex = 0; }
+        if (endIndex === void 0) { endIndex = text.length; }
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    if (!(endIndex > startIndex)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, text.slice(0, --endIndex).join("")];
+                case 1:
+                    _c.sent();
+                    return [3 /*break*/, 0];
+                case 2: return [2 /*return*/];
+            }
+        });
+    }
+    function getOverlap(start, _a) {
+        var _b = __read(_a), end = _b.slice(0);
+        return __spread(start, [NaN]).findIndex(function (char, i) { return end[i] !== char; });
+    }
     var loopedType = typing;
     react.useEffect(function () {
         if (ref.current === null)
@@ -117,222 +323,6 @@ function useTyping(ref, _a) {
         }
     });
 }
-/**
- * Typing core logic
- * @param node
- * @param args
- */
-function typing(node, speed) {
-    var args = [];
-    for (var _i = 2; _i < arguments.length; _i++) {
-        args[_i - 2] = arguments[_i];
-    }
-    return __awaiter(this, void 0, void 0, function () {
-        var args_1, args_1_1, arg, _a, e_1_1;
-        var e_1, _b;
-        return __generator(this, function (_c) {
-            switch (_c.label) {
-                case 0:
-                    _c.trys.push([0, 12, 13, 14]);
-                    args_1 = __values(args), args_1_1 = args_1.next();
-                    _c.label = 1;
-                case 1:
-                    if (!!args_1_1.done) return [3 /*break*/, 11];
-                    arg = args_1_1.value;
-                    _a = typeof arg;
-                    switch (_a) {
-                        case "string": return [3 /*break*/, 2];
-                        case "number": return [3 /*break*/, 4];
-                        case "function": return [3 /*break*/, 6];
-                    }
-                    return [3 /*break*/, 8];
-                case 2: return [4 /*yield*/, edit(node, speed, arg)];
-                case 3:
-                    _c.sent();
-                    return [3 /*break*/, 10];
-                case 4: return [4 /*yield*/, wait(arg)];
-                case 5:
-                    _c.sent();
-                    return [3 /*break*/, 10];
-                case 6: return [4 /*yield*/, arg.apply(void 0, __spread([node, speed], args))];
-                case 7:
-                    _c.sent();
-                    return [3 /*break*/, 10];
-                case 8: return [4 /*yield*/, arg];
-                case 9:
-                    _c.sent();
-                    _c.label = 10;
-                case 10:
-                    args_1_1 = args_1.next();
-                    return [3 /*break*/, 1];
-                case 11: return [3 /*break*/, 14];
-                case 12:
-                    e_1_1 = _c.sent();
-                    e_1 = { error: e_1_1 };
-                    return [3 /*break*/, 14];
-                case 13:
-                    try {
-                        if (args_1_1 && !args_1_1.done && (_b = args_1.return)) _b.call(args_1);
-                    }
-                    finally { if (e_1) throw e_1.error; }
-                    return [7 /*endfinally*/];
-                case 14: return [2 /*return*/];
-            }
-        });
-    });
-}
-function edit(node, speed, text) {
-    return __awaiter(this, void 0, void 0, function () {
-        var textContent, overlap;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    textContent = node.textContent || '';
-                    overlap = getOverlap(textContent, text);
-                    return [4 /*yield*/, perform(node, speed, __spread(deleter(textContent, overlap), writer(text, overlap)))];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-function wait(ms) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, new Promise(function (resolve) { return setTimeout(resolve, ms); })];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-function perform(node, speed, edits) {
-    return __awaiter(this, void 0, void 0, function () {
-        var _a, _b, op, e_2_1;
-        var e_2, _c;
-        return __generator(this, function (_d) {
-            switch (_d.label) {
-                case 0:
-                    _d.trys.push([0, 5, 6, 7]);
-                    _a = __values(editor(edits)), _b = _a.next();
-                    _d.label = 1;
-                case 1:
-                    if (!!_b.done) return [3 /*break*/, 4];
-                    op = _b.value;
-                    op(node);
-                    return [4 /*yield*/, wait(speed + speed * (Math.random() - 0.5))];
-                case 2:
-                    _d.sent();
-                    _d.label = 3;
-                case 3:
-                    _b = _a.next();
-                    return [3 /*break*/, 1];
-                case 4: return [3 /*break*/, 7];
-                case 5:
-                    e_2_1 = _d.sent();
-                    e_2 = { error: e_2_1 };
-                    return [3 /*break*/, 7];
-                case 6:
-                    try {
-                        if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
-                    }
-                    finally { if (e_2) throw e_2.error; }
-                    return [7 /*endfinally*/];
-                case 7: return [2 /*return*/];
-            }
-        });
-    });
-}
-function editor(edits) {
-    var _loop_1, edits_1, edits_1_1, edit_1, e_3_1;
-    var e_3, _a;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                _loop_1 = function (edit_1) {
-                    return __generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, function (node) { return requestAnimationFrame(function () { return (node.textContent = edit_1); }); }];
-                            case 1:
-                                _a.sent();
-                                return [2 /*return*/];
-                        }
-                    });
-                };
-                _b.label = 1;
-            case 1:
-                _b.trys.push([1, 6, 7, 8]);
-                edits_1 = __values(edits), edits_1_1 = edits_1.next();
-                _b.label = 2;
-            case 2:
-                if (!!edits_1_1.done) return [3 /*break*/, 5];
-                edit_1 = edits_1_1.value;
-                return [5 /*yield**/, _loop_1(edit_1)];
-            case 3:
-                _b.sent();
-                _b.label = 4;
-            case 4:
-                edits_1_1 = edits_1.next();
-                return [3 /*break*/, 2];
-            case 5: return [3 /*break*/, 8];
-            case 6:
-                e_3_1 = _b.sent();
-                e_3 = { error: e_3_1 };
-                return [3 /*break*/, 8];
-            case 7:
-                try {
-                    if (edits_1_1 && !edits_1_1.done && (_a = edits_1.return)) _a.call(edits_1);
-                }
-                finally { if (e_3) throw e_3.error; }
-                return [7 /*endfinally*/];
-            case 8: return [2 /*return*/];
-        }
-    });
-}
-function writer(_a, startIndex, endIndex) {
-    var _b = __read(_a), text = _b.slice(0);
-    if (startIndex === void 0) { startIndex = 0; }
-    if (endIndex === void 0) { endIndex = text.length; }
-    return __generator(this, function (_c) {
-        switch (_c.label) {
-            case 0:
-                if (!(startIndex < endIndex)) return [3 /*break*/, 2];
-                return [4 /*yield*/, text.slice(0, ++startIndex).join("")];
-            case 1:
-                _c.sent();
-                return [3 /*break*/, 0];
-            case 2: return [2 /*return*/];
-        }
-    });
-}
-function deleter(_a, startIndex, endIndex) {
-    var _b = __read(_a), text = _b.slice(0);
-    if (startIndex === void 0) { startIndex = 0; }
-    if (endIndex === void 0) { endIndex = text.length; }
-    return __generator(this, function (_c) {
-        switch (_c.label) {
-            case 0:
-                if (!(endIndex > startIndex)) return [3 /*break*/, 2];
-                return [4 /*yield*/, text.slice(0, --endIndex).join("")];
-            case 1:
-                _c.sent();
-                return [3 /*break*/, 0];
-            case 2: return [2 /*return*/];
-        }
-    });
-}
-function getOverlap(start, _a) {
-    var _b = __read(_a), end = _b.slice(0);
-    return __spread(start, [NaN]).findIndex(function (char, i) { return end[i] !== char; });
-}
 
 exports.default = useTyping;
-exports.deleter = deleter;
-exports.editor = editor;
-exports.getOverlap = getOverlap;
-exports.typing = typing;
-exports.writer = writer;
 //# sourceMappingURL=index.js.map
