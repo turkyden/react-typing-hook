@@ -14,6 +14,12 @@ export default {
       file: pkg.main,
       format: 'cjs',
       sourcemap: true
+    },
+    {
+      file: pkg.unpkg,
+      format: 'umd',
+      name: 'useTyping',
+      sourcemap: true
     }
   ],
   plugins: [
@@ -21,7 +27,6 @@ export default {
     css({ output: 'dist/index.css' })
   ],
   external: [
-    ...Object.keys(pkg.dependencies),
     ...Object.keys(pkg.peerDependencies)
   ]
 }

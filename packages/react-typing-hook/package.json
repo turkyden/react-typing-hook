@@ -2,8 +2,9 @@
   "name": "react-typing-hook",
   "version": "1.0.2",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "unpkg": "dist/useTyping.js",
   "author": "Dengju Deng <wj871287@gmail.com>",
   "homepage": "https://react-typing-hook.com",
   "license": "MIT",
@@ -27,13 +28,8 @@
     "prepublishOnly": "yarn build",
     "test": "jest"
   },
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react": "^16.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",

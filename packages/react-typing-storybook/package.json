@@ -17,5 +17,8 @@
     "babel-loader": "^8.1.0",
     "react-is": "^17.0.1",
     "react-typing-hook": "^1.0.2"
+  },
+  "dependencies": {
+    "react": "^17.0.1"
   }
 }

@@ -2,8 +2,8 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "outDir": "./dist",
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ES5",
+    "module": "ESNext",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "declaration": true,
