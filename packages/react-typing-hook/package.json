@@ -1,46 +1,46 @@
 {
-  "name": "react-typing-hook",
-  "version": "1.0.3",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "unpkg": "dist/useTyping.js",
-  "author": "Dengju Deng <wj871287@gmail.com>",
-  "homepage": "https://react-typing-hook.com",
-  "license": "MIT",
-  "repository": "https://github.com/Turkyden/react-typing-hook/tree/master/packages/react-typing-hook",
-  "funding": "https://github.com/Turkyden/react-typing-hook?sponsor=1",
-  "keywords": [
-    "react",
-    "typing",
-    "typical",
-    "input",
-    "animate text",
-    "key in",
-    "entering"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
+	"name": "react-typing-hook",
+	"version": "1.0.3",
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"unpkg": "dist/useTyping.js",
+	"author": "Dengju Deng <wj871287@gmail.com>",
+	"homepage": "https://react-typing-hook.com",
+	"license": "MIT",
+	"repository": "https://github.com/Turkyden/react-typing-hook/tree/master/packages/react-typing-hook",
+	"funding": "https://github.com/Turkyden/react-typing-hook?sponsor=1",
+	"keywords": [
+		"react",
+		"typing",
+		"typical",
+		"input",
+		"animate text",
+		"key in",
+		"entering"
+	],
   "scripts": {
     "start": "rollup -c -w",
     "build": "rollup -c",
     "prepublishOnly": "yarn build",
     "test": "jest"
   },
-  "peerDependencies": {
-    "react": "^16.8.6"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.10.4",
-    "@types/jest": "^24.0.15",
-    "@types/react": "^16.9.23",
-    "jest": "^26.2.2",
-    "rollup": "^2.21.0",
-    "rollup-plugin-css-only": "^2.1.0",
-    "rollup-plugin-typescript2": "^0.27.1",
-    "ts-jest": "^26.1.4",
-    "typescript": "^3.9.6"
-  },
-  "gitHead": "15770b37feb64de96aefe57f30227b1e826f9389"
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"peerDependencies": {
+		"react": "^16.8.6"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.10.4",
+		"@types/jest": "^24.0.15",
+		"@types/react": "^16.9.23",
+		"jest": "^26.2.2",
+		"rollup": "^2.21.0",
+		"rollup-plugin-css-only": "^2.1.0",
+		"rollup-plugin-typescript2": "^0.27.1",
+		"ts-jest": "^26.1.4",
+		"typescript": "^3.9.6"
+	},
+	"gitHead": "15770b37feb64de96aefe57f30227b1e826f9389"
 }

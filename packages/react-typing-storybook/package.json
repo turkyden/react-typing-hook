@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "start-storybook -p 6006 --no-dll",
-    "build": "build-storybook -s public -o ../../build --no-dll",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
@@ -15,10 +14,10 @@
     "@storybook/addon-links": "^6.0.28",
     "@storybook/react": "^6.0.28",
     "babel-loader": "^8.1.0",
-    "react-is": "^17.0.1",
-    "react-typing-hook": "^1.0.3"
+    "react-is": "^17.0.1"
   },
   "dependencies": {
-    "react": "^17.0.1"
+    "react": "^17.0.1",
+    "react-typing-hook": "^1.0.3"
   }
 }

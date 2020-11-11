@@ -1,3 +1,5 @@
+///<reference path="index.d.ts"/>
+
 import { useEffect, RefObject } from "react";
 import './index.css'
 
