@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var react = require('react');
 
 /**
@@ -80,5 +78,5 @@ function useTyping(ref, { steps, loop, speed = 60 }) {
     });
 }
 
-exports.default = useTyping;
+module.exports = useTyping;
 //# sourceMappingURL=index.js.map
