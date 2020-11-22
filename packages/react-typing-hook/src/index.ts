@@ -1,7 +1,22 @@
-///<reference path="index.d.ts"/>
+
 
 import { useEffect, RefObject } from "react";
+
 import './index.css'
+
+type Typing = (node: HTMLDocument, speed: number, ...args: TypingSteps) => Promise<void>
+
+type Editor = (node: HTMLDocument) => number
+
+type GeneratorEditor = Generator<Editor, void, Editor>
+
+type TypingSteps = Array<string | number | (() => any) | Typing>
+
+interface TypingOptions {
+  steps: TypingSteps,
+  loop?: number,
+  speed?: number
+}
 
 /**
  * React Hook Wrapper

@@ -8,18 +8,23 @@ export default {
     {
       file: pkg.module,
       format: 'esm',
-      sourcemap: true
+      sourcemap: true,
+      exports: 'default'
     },
     {
       file: pkg.main,
       format: 'cjs',
-      sourcemap: true
+      sourcemap: true,
+      exports: 'default'
     },
     {
       file: pkg.unpkg,
       format: 'umd',
       name: 'useTyping',
-      sourcemap: true
+      sourcemap: true,
+      globals: {
+        react: 'React'
+      }
     }
   ],
   plugins: [

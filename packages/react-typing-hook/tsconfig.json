@@ -14,9 +14,8 @@
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "typeRoots": ["@types", "../../node_modules/@types"]
+    "typeRoots": ["../../node_modules/@types"]
   },
-  "files": ["src/@types/index.ts"],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }
