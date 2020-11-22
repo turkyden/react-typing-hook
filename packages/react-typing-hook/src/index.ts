@@ -10,7 +10,7 @@ type GeneratorEditor<T> = Generator<Editor<T>, void, Editor<T>>
 
 type TypingSteps<T> = Array<string | number | (() => any) | Typing<T>>
 
-export interface TypingOptions<T> {
+interface TypingOptions<T> {
   steps: TypingSteps<T>,
   loop?: number,
   speed?: number
