@@ -90,11 +90,6 @@ function __spread() {
     return ar;
 }
 
-/**
- * React Hook Wrapper
- * @param ref
- * @param param1
- */
 function useTyping(_a) {
     var steps = _a.steps, loop = _a.loop, _b = _a.speed, speed = _b === void 0 ? 60 : _b;
     var ref = react.useRef(null);

@@ -10,17 +10,12 @@ type GeneratorEditor = Generator<Editor, void, Editor>
 
 type TypingSteps = Array<string | number | (() => any) | Typing>
 
-interface TypingOptions {
+export interface TypingOptions {
   steps: TypingSteps,
   loop?: number,
   speed?: number
 }
 
-/**
- * React Hook Wrapper
- * @param ref 
- * @param param1 
- */
 export default function useTyping({ steps, loop, speed = 60 } : TypingOptions) : RefObject<HTMLDocument> {
 
   const ref = useRef<HTMLDocument>(null);
