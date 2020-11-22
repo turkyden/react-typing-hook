@@ -1,11 +1,11 @@
 import { RefObject } from "react";
 import './index.css';
-declare type Typing = (node: HTMLDocument, speed: number, ...args: TypingSteps) => Promise<void>;
-declare type TypingSteps = Array<string | number | (() => any) | Typing>;
-export interface TypingOptions {
-    steps: TypingSteps;
+declare type Typing<T> = (node: T, speed: number, ...args: TypingSteps<T>) => Promise<void>;
+declare type TypingSteps<T> = Array<string | number | (() => any) | Typing<T>>;
+export interface TypingOptions<T> {
+    steps: TypingSteps<T>;
     loop?: number;
     speed?: number;
 }
-export default function useTyping({ steps, loop, speed }: TypingOptions): RefObject<HTMLDocument>;
+export default function useTyping<T extends HTMLElement>({ steps, loop, speed }: TypingOptions<T>): RefObject<T>;
 export {};

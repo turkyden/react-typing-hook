@@ -2,25 +2,25 @@ import { useEffect, useRef, RefObject } from "react";
 
 import './index.css'
 
-type Typing = (node: HTMLElement, speed: number, ...args: TypingSteps) => Promise<void>
+type Typing<T> = (node: T, speed: number, ...args: TypingSteps<T>) => Promise<void>
 
-type Editor = (node: HTMLElement) => number
+type Editor<T> = (node: T) => number
 
-type GeneratorEditor = Generator<Editor, void, Editor>
+type GeneratorEditor<T> = Generator<Editor<T>, void, Editor<T>>
 
-type TypingSteps = Array<string | number | (() => any) | Typing>
+type TypingSteps<T> = Array<string | number | (() => any) | Typing<T>>
 
-export interface TypingOptions {
-  steps: TypingSteps,
+export interface TypingOptions<T> {
+  steps: TypingSteps<T>,
   loop?: number,
   speed?: number
 }
 
-export default function useTyping({ steps, loop, speed = 60 } : TypingOptions) : RefObject<HTMLElement> {
+export default function useTyping<T extends HTMLElement>({ steps, loop, speed = 60 } : TypingOptions<T>) : RefObject<T> {
 
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<T>(null);
 
-  async function typing(node: HTMLElement, speed: number, ...args: TypingSteps): Promise<void> {
+  async function typing<T extends HTMLElement>(node: T, speed: number, ...args: TypingSteps<T>): Promise<void> {
     for (const arg of args) {
       switch (typeof arg) {
         case "string":
@@ -38,10 +38,10 @@ export default function useTyping({ steps, loop, speed = 60 } : TypingOptions) :
     }
   }
 
-  async function edit(node: HTMLElement, speed: number, text: string): Promise<void> {
+  async function edit<T extends HTMLElement>(node: T, speed: number, text: string): Promise<void> {
     const textContent = node.textContent || '';
     const overlap = getOverlap(textContent, text);
-    await perform(node, speed, [
+    await perform<T>(node, speed, [
       ...deleter(textContent, overlap) as Iterable<string>,
       ...writer(text, overlap) as Iterable<string>,
     ]);
@@ -51,16 +51,16 @@ export default function useTyping({ steps, loop, speed = 60 } : TypingOptions) :
     await new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  async function perform(node: HTMLElement, speed: number, edits: Iterable<string>): Promise<void> {
-    for (const op of editor(edits) as Iterable<Editor>) {
+  async function perform<T>(node: T, speed: number, edits: Iterable<string>): Promise<void> {
+    for (const op of editor(edits) as Iterable<Editor<T>>) {
       op(node);
       await wait(speed + speed * (Math.random() - 0.5));
     }
   }
 
-  function* editor(edits: Iterable<string>): GeneratorEditor {
+  function* editor<T extends HTMLElement>(edits: Iterable<string>): GeneratorEditor<T> {
     for (const edit of edits) {
-      yield (node: HTMLElement) => requestAnimationFrame(() => (node.textContent = edit));
+      yield (node: T) => requestAnimationFrame(() => (node.textContent = edit));
     }
   }
 
