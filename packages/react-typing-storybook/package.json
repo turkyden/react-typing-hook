@@ -1,9 +1,10 @@
 {
   "name": "react-typing-storybook",
   "private": true,
-  "version": "1.0.5",
+  "version": "1.0.4",
   "main": "index.js",
   "scripts": {
+    "start": "start-storybook -p 6006 --no-dll",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
@@ -17,6 +18,6 @@
   },
   "dependencies": {
     "react": "^17.0.1",
-    "react-typing-hook": "^1.0.5"
+    "react-typing-hook": "^1.0.4"
   }
 }

@@ -21,7 +21,7 @@ interface TypingOptions {
  * @param ref 
  * @param param1 
  */
-export default function useTyping({ steps, loop, speed = 60 } : TypingOptions) : RefObject<HTMLDocument | null> {
+export default function useTyping({ steps, loop, speed = 60 } : TypingOptions) : RefObject<HTMLDocument> {
 
   const ref = useRef<HTMLDocument>(null);
 

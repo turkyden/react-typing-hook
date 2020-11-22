@@ -12,5 +12,5 @@ interface TypingOptions {
  * @param ref
  * @param param1
  */
-export default function useTyping({ steps, loop, speed }: TypingOptions): RefObject<HTMLDocument | null>;
+export default function useTyping({ steps, loop, speed }: TypingOptions): RefObject<HTMLDocument>;
 export {};
