@@ -1,6 +1,6 @@
 {
 	"name": "react-typing-hook",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
@@ -19,12 +19,12 @@
 		"key in",
 		"entering"
 	],
-  "scripts": {
-    "start": "rollup -c -w",
-    "build": "rollup -c",
-    "prepublishOnly": "yarn build",
-    "test": "jest"
-  },
+	"scripts": {
+		"start": "rollup -c -w",
+		"build": "rollup -c",
+		"prepublishOnly": "yarn build",
+		"test": "jest"
+	},
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/"
 	},
