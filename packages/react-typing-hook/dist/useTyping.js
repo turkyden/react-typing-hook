@@ -97,8 +97,9 @@
      * @param ref
      * @param param1
      */
-    function useTyping(ref, _a) {
+    function useTyping(_a) {
         var steps = _a.steps, loop = _a.loop, _b = _a.speed, speed = _b === void 0 ? 60 : _b;
+        var ref = react.useRef(null);
         function typing(node, speed) {
             var args = [];
             for (var _i = 2; _i < arguments.length; _i++) {
@@ -307,21 +308,22 @@
         }
         var loopedType = typing;
         react.useEffect(function () {
-            if (ref.current === null)
-                return undefined;
-            if (loop === Infinity) {
-                typing.apply(void 0, __spread([ref.current, speed], steps, [loopedType]));
+            if (ref.current != null) {
+                if (loop === Infinity) {
+                    typing.apply(void 0, __spread([ref.current, speed], steps, [loopedType]));
+                }
+                else if (typeof loop === "number") {
+                    typing.apply(void 0, __spread([ref.current,
+                        speed], Array(loop)
+                        .fill(steps)
+                        .flat()));
+                }
+                else {
+                    typing.apply(void 0, __spread([ref.current, speed], steps));
+                }
             }
-            else if (typeof loop === "number") {
-                typing.apply(void 0, __spread([ref.current,
-                    speed], Array(loop)
-                    .fill(steps)
-                    .flat()));
-            }
-            else {
-                typing.apply(void 0, __spread([ref.current, speed], steps));
-            }
-        });
+        }, []);
+        return ref;
     }
 
     return useTyping;

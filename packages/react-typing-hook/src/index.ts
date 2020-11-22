@@ -1,6 +1,4 @@
-
-
-import { useEffect, RefObject } from "react";
+import { useEffect, useRef, RefObject } from "react";
 
 import './index.css'
 
@@ -23,7 +21,9 @@ interface TypingOptions {
  * @param ref 
  * @param param1 
  */
-export default function useTyping(ref: RefObject<HTMLDocument | null>, { steps, loop, speed = 60 } : TypingOptions) {
+export default function useTyping({ steps, loop, speed = 60 } : TypingOptions) : RefObject<HTMLDocument | null> {
+
+  const ref = useRef<HTMLDocument>(null);
 
   async function typing(node: HTMLDocument, speed: number, ...args: TypingSteps): Promise<void> {
     for (const arg of args) {
@@ -88,21 +88,25 @@ export default function useTyping(ref: RefObject<HTMLDocument | null>, { steps, 
   const loopedType = typing;
 
   useEffect(() => {
-    if(ref.current === null) return undefined;
-    
-    if (loop === Infinity) {
-      typing(ref.current, speed, ...steps, loopedType);
-    } else if (typeof loop === "number") {
-      typing(
-        ref.current,
-        speed,
-        ...Array(loop)
-          .fill(steps)
-          .flat()
-      );
-    } else {
-      typing(ref.current, speed, ...steps);
+
+    if(ref.current != null) {
+      if (loop === Infinity) {
+        typing(ref.current, speed, ...steps, loopedType);
+      } else if (typeof loop === "number") {
+        typing(
+          ref.current,
+          speed,
+          ...Array(loop)
+            .fill(steps)
+            .flat()
+        );
+      } else {
+        typing(ref.current, speed, ...steps);
+      }
     }
-  });
+    
+  }, []);
+
+  return ref
 }
 

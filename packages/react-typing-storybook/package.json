@@ -4,7 +4,6 @@
   "version": "1.0.4",
   "main": "index.js",
   "scripts": {
-    "start": "start-storybook -p 6006 --no-dll",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
